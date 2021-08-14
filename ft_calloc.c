@@ -6,7 +6,7 @@
 /*   By: oronda <oronda@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/08 15:56:10 by oronda            #+#    #+#             */
-/*   Updated: 2021/08/08 22:49:14 by oronda           ###   ########.fr       */
+/*   Updated: 2021/08/14 22:10:19 by oronda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	}
 	if (!safe_mult(nmemb, size))
 		return (NULL);
-	ptr = (void *)malloc(nmemb * size);
+	ptr = (void *)malloc(safe_mult(nmemb, size));
 	if (!ptr)
 		return (NULL);
 	ft_bzero(ptr, nmemb * size);
