@@ -6,7 +6,7 @@
 /*   By: oronda <oronda@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 23:06:15 by oronda            #+#    #+#             */
-/*   Updated: 2021/08/09 08:23:55 by oronda           ###   ########.fr       */
+/*   Updated: 2021/08/14 20:41:34 by oronda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,24 +21,15 @@ char	*ft_strrchr(char *s, int c)
 	ptr = NULL;
 	i = 0;
 	len = ft_strlen(s);
-	while (i < len + 1)
+	while (i < len)
 	{
 		if (s[i] == (unsigned char)c)
 			ptr = &s[i];
 		i++;
 	}
 	if (s[i] == (unsigned char)c)
-		return (ptr);
+		return (ptr = &s[i]);
 	if (!ptr)
 		return (NULL);
 	return (ptr);
 }
-
-int main(int argc, char const *argv[])
-{
-       char src[] =  "123456789";
-        ft_strrchr(src, 'a');
-
-	return 0;
-}
-
